@@ -25,7 +25,7 @@ Ever wished for a hassle-free way to download your entire personal collection mo
     - Open `config.yaml` in a text editor.
     - Set the `headless` parameter to `False` if it's your first time using the program and you need to log in to your collection account.
     - If logging in for the first time, you have two options:
-        - Close and restart the program after adjusting the configuration.
+        - Close and restart the program after login to CIVIT AI site.
         - Wait for approximately 500 seconds before the program continues by itself.
 
 4. **Run the Script:**
