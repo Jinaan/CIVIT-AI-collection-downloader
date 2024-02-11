@@ -26,3 +26,7 @@ FILTERTYPE:
 # profile name to use in the automated chrome browser, you can set multiple profiles
 # with profile browser, it can save your login session, so you don't need to login again and again
 PROFILENAME: "2"
+
+
+# set to True if it's the first time you run the script
+FIRST_TIME: False
