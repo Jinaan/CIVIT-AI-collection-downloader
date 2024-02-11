@@ -31,7 +31,7 @@ Ever wished for a hassle-free way to download your entire personal collection mo
 
 4. **Run the Script:**
    
-    ```Double click on main.py ```
+    ```Run main.py ```
 
 
 **Note:**
