@@ -29,7 +29,8 @@ Ever wished for a hassle-free way to download your entire personal collection mo
 ## 📝 Example
 
 ```python
-python civit_ai_downloader.py --username john_doe --password secure_pass123```
+python civit_ai_downloader.py --username john_doe --password secure_pass123
+```
 
 **Note:**
 - Ensure Python is installed on your machine.
