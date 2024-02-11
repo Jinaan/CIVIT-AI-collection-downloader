@@ -23,6 +23,7 @@ Ever wished for a hassle-free way to download your entire personal collection mo
 
 3. **Adjust Configuration:**
     - Open `config.yaml` in a text editor.
+    - Interact with and configure settings as needed.
     - Set the `headless` parameter to `False` if it's your first time using the program and you need to log in to your collection account.
     - If logging in for the first time, you have two options:
         - Close and restart the program after login to CIVIT AI site.
