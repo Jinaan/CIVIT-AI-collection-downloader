@@ -21,7 +21,14 @@ Ever wished for a hassle-free way to download your entire personal collection mo
     pip install -r requirements.txt
     ```
 
-3. **Run the Script:**
+3. **Adjust Configuration:**
+    - Open `config.yaml` in a text editor.
+    - Set the `headless` parameter to `False` if it's your first time using the program and you need to log in to your collection account.
+    - If logging in for the first time, you have two options:
+        - Close and restart the program after adjusting the configuration.
+        - Wait for approximately 500 seconds before the program continues by itself.
+
+4. **Run the Script:**
    
     ```Double click on main.py ```
 
