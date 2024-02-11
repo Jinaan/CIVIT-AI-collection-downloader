@@ -1,0 +1,1 @@
+# CIVITAI-collection-downloader
