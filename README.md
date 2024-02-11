@@ -1,1 +1,1 @@
-# CIVITAI-collection-downloader
+# CIVIT-AI-collection-downloader
