@@ -1,10 +1,10 @@
 # Path to A1111 directory for example "G:/AUTOMATIC1111"
-A1111_PATH: "G:/AUTOMATIC1111"        
+A1111_PATH: "[Path to A1111]"        
 
 
 # url to the collection page e.g. "https://civitai.com/collections/111111"
 # make sure to use the correct collection url and not private
-COLLECTIONURL: "https://civitai.com/collections/172112"
+COLLECTIONURL: "[url to the collection]"
 
 
 # set to True if you want to run the script in headless mode
