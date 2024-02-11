@@ -1,0 +1,28 @@
+# Path to A1111 directory for example "G:/AUTOMATIC1111"
+A1111_PATH: "G:/AUTOMATIC1111"        
+
+
+# url to the collection page e.g. "https://civitai.com/collections/111111"
+# make sure to use the correct collection url and not private
+COLLECTIONURL: "https://civitai.com/collections/172112"
+
+
+# set to True if you want to run the script in headless mode
+# set to False if you want to run the script in normal mode, this will open a browser window
+# if you set to False, make sure to close the browser window when previous run is error and stoped forcefully
+# because the script will not close the browser window automatically when the script is error and stoped forcefully
+HEADLESS: False
+
+
+# if you want to use multiple filters, just uncomment the model filter types you want to use
+# checkpoint usually have a little big size like 1.5GB and more, so be careful if you have a slow internet connection, like me
+FILTERTYPE:
+  - "lora"
+  # - "checkpoint"
+  # - "hypernetwork"
+  # - "embedding" 
+
+
+# profile name to use in the automated chrome browser, you can set multiple profiles
+# with profile browser, it can save your login session, so you don't need to login again and again
+PROFILENAME: "2"
