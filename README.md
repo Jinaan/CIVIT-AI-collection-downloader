@@ -1,6 +1,6 @@
 # CIVIT AI Personal Collection Downloader
 
-![CIVIT AI Personal Collection Downloader](https://drive.google.com/file/d/16MPjXSlSUIRDn2RHa_QQhO6zNuT3GxRq/view?usp=sharing)
+![CIVIT AI Personal Collection Downloader](https://drive.google.com/file/d/16MPjXSlSUIRDn2RHa_QQhO6zNuT3GxRq/view)
 
 Ever wished for a hassle-free way to download your entire personal collection model from CIVIT AI? Your wish is granted! This Python program streamlines the process, making it a breeze.
 
