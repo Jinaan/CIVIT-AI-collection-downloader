@@ -1,44 +1,42 @@
-# CIVIT-AI-collection-downloader
-🤖 CIVIT AI Personal Collection Downloader
+#CIVIT AI Personal Collection Downloader
 
-Ever wanted to effortlessly download your entire personal collection model from CIVIT AI? Look no further! This Python program is designed to simplify the process for you.
+Ever wished for a hassle-free way to download your entire personal collection model from CIVIT AI? Your wish is granted! This Python program streamlines the process, making it a breeze.
 
-🚀 Features:
+🚀 Features
+User-Friendly: Download your personal collection model with just a few clicks.
+Efficient: Save time by automating the download process.
+Customizable: Tailor the program to suit your needs.
+🛠️ How to Use
+Clone the Repository:
 
-Easy-to-Use: A user-friendly Python script to download your personal collection model with just a few simple steps.
+bash
+Copy code
+```git clone https://github.com/Jinaan/CIVIT-AI-collection-downloader.git```
+Install Dependencies:
 
-Efficient: Save time by automating the download process, allowing you to focus on more important tasks.
-
-Customizable: Tailor the program to your needs and preferences.
-
-How to Use:
-
-Clone the repository.
-Install the required dependencies.
 bash
 Copy code
 pip install -r requirements.txt
-Run the script with your CIVIT AI credentials.
-Example:
+Run the Script:
 
 python
 Copy code
 python civit_ai_downloader.py --username YOUR_USERNAME --password YOUR_PASSWORD
+📝 Example
+python
+Copy code
+python civit_ai_downloader.py --username john_doe --password secure_pass123
 Note:
 
-Ensure that you have Python installed on your machine.
-Use this program responsibly and in compliance with CIVIT AI's terms of service.
-GitHub Repository:
-Link to your GitHub repository
+Ensure Python is installed on your machine.
+Use responsibly and comply with CIVIT AI's terms of service.
+📣 Apology
+🙏 I apologize for any inconvenience caused by my novice programming skills. This project is a humble attempt, and I appreciate your understanding as I continue to learn and improve.
 
-Apology:
-🙏 I apologize for any inconvenience caused by my newbie programming skills. This project is a humble attempt, and I appreciate your understanding as I continue to learn and improve.
+🤝 Contributions
+Feel free to contribute, report issues, or suggest enhancements on the GitHub repository.
 
-Contributions:
-Feel free to contribute and improve the script. Report any issues or suggest enhancements on the GitHub repository.
-
-CIVIT AI Website:
+🌐 CIVIT AI Website
 Visit CIVIT AI
 
 Happy downloading! 🤖📦
-
