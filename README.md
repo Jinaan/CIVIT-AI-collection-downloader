@@ -22,8 +22,8 @@ Ever wished for a hassle-free way to download your entire personal collection mo
     ```
 
 3. **Run the Script:**
-    ```python
-    python civit_ai_downloader.py --username YOUR_USERNAME --password YOUR_PASSWORD
+    ```text
+    Double click on main.py
     ```
 
 ## 📝 Example
