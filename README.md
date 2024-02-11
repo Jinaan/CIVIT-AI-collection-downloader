@@ -52,10 +52,10 @@ Feel free to contribute, report issues, or suggest enhancements on the [GitHub r
 [Visit CIVIT AI](https://civitai.com/)
 
 Happy downloading! 🤖📦
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
 **Note from the Author:**
 I'm not yet familiar with all the settings and rules on GitHub, as I'm still getting used to the platform. If you notice any issues or have suggestions, kindly bear with me, and feel free to provide guidance or feedback. Your assistance is greatly appreciated!
