@@ -37,6 +37,9 @@ Ever wished for a hassle-free way to download your entire personal collection mo
 **Note:**
 - Ensure Python is installed on your machine.
 - Use responsibly and comply with CIVIT AI's terms of service.
+  
+**Disclaimer:**
+CIVIT AI actively updates its user interface, which may result in potential errors or malfunctions in the program due to changes on their end. If you encounter any issues during execution, feel free to contact me on Discord at [MAXXEL](https://discordapp.com/users/727134818017738783).
 
 ## 📣 Apology
 🙏 I apologize for any inconvenience caused by my novice programming skills. This project is a humble attempt, and I appreciate your understanding as I continue to learn and improve.
