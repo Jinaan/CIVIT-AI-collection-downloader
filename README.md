@@ -22,6 +22,7 @@ Ever wished for a hassle-free way to download your entire personal collection mo
     ```
 
 3. **Run the Script:**
+   
     ```Double click on main.py ```
 
 ## 📝 Example
