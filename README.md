@@ -1,6 +1,6 @@
 # CIVIT AI Personal Collection Downloader
 
-![CIVIT AI Personal Collection Downloader]([https://your-image-link-here.com](https://avatars.githubusercontent.com/u/108078733?v=4))
+![CIVIT AI Personal Collection Downloader]([https://drive.google.com/file/d/16MPjXSlSUIRDn2RHa_QQhO6zNuT3GxRq/view?usp=sharingm])
 
 Ever wished for a hassle-free way to download your entire personal collection model from CIVIT AI? Your wish is granted! This Python program streamlines the process, making it a breeze.
 
