@@ -4,6 +4,7 @@ import fuzzywuzzy
 import fuzzywuzzy.process
 from selenium.webdriver.common.by import By
 
+from .filterBaseModel import CategorizeModelBase
 from .saveModel import saveModel
 
 from .configAccess import getConfig
@@ -58,6 +59,32 @@ def DownloadModel(driver, CardData):
                     break
                 except:
                     pass
+                
+            
+            
+            # +========================+
+            # | Get Model Type         |
+            # +========================+
+            baseModel = driver.find_elements(By.CSS_SELECTOR, "tr.mantine-1avyp1d")
+            print(len(baseModel))
+            for iBaseModel in baseModel:
+                # print(iBaseModel.text)
+                if "Base Model" in iBaseModel.text:
+                    # remove the "Base Model" text from the string
+                    model = iBaseModel.text.replace("Base Model", "")
+                    model = CategorizeModelBase(model)
+                if "Trigger Words" in iBaseModel.text:
+                    triggerWords = iBaseModel.text.replace("Trigger Words", "")
+                    triggerWords = triggerWords.split("\n")
+                    triggerWords = [i.strip() for i in triggerWords]
+                    # if found empty string, remove it
+                    triggerWords = list(filter(None, triggerWords))
+                    # combine the trigger words into one string with comma
+                    triggerWords = ", ".join(triggerWords)
+            
+            
+            # time.sleep(1000)
+            
                 
                 
             # +============================+
@@ -137,7 +164,13 @@ def DownloadModel(driver, CardData):
             # +===========================+
             # | Downloading the Model     |
             # +===========================+
-            saveModel(ParentSave, modelTitle.text, downloadLink)
+            dataToSave = {
+                "URL": downloadLink,
+                "Name": modelTitle.text,
+                "model": model,
+                "trigger": triggerWords
+            }
+            saveModel(ParentSave, dataToSave)
             
             continue
         
