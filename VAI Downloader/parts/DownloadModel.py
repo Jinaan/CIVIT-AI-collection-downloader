@@ -29,11 +29,25 @@ FILTERTYPE = config.get("FILTERTYPE",[])
 # +==============================+
 def DownloadModel(driver, CardData):
     for iCardData in CardData:
+        print("\n+================================+\n")
         try:
             driver.get(iCardData["href"])
             
             while "503 Service Temporarily Unavailable" in driver.page_source:
                 driver.refresh()
+                    
+                
+            # +========================+
+            # | Get Model Name         |
+            # +========================+
+            while True:
+                try:
+                    time.sleep(1)
+                    modelTitle = driver.find_element(By.CLASS_NAME, "mantine-1uncs0m")
+                    break
+                except:
+                    pass
+            print("Trying\t\t\t: " + modelTitle.text)
             
             
             # +========================+
@@ -52,7 +66,7 @@ def DownloadModel(driver, CardData):
             # | Checking Similarities      |
             # | with FILTER                |
             # +============================+
-            print("Checking Model Type of " + modelType.text)
+            print("Checking Model Type of\t: " + modelType.text)
             
             result = fuzzywuzzy.process.extractOne(modelType.text.lower(), FILTERTYPE)
             # Check if a matching filter was found with sufficient similarity
@@ -70,34 +84,20 @@ def DownloadModel(driver, CardData):
             if modelType.text.lower() == "lora":
                 try:
                     labelContainer = driver.find_element(By.CLASS_NAME, "mantine-eqo531")
-                    print(labelContainer.text)
+                    print("Model Category\t\t: " + labelContainer.text)
                 
                     if labelContainer:
                         ParentSave = os.path.join(ParentSave, labelContainer.text)
                 
-                    # check if the folder is exist or not
-                    if not os.path.exists(ParentSave):
-                        os.makedirs(ParentSave)
-                
                 except:
-                    pass
-                    
-                    
+                    ParentSave = os.path.join(ParentSave, "UNKNOWN")
                 
-            # +========================+
-            # | Get Model Name         |
-            # +========================+
-            while True:
-                try:
-                    time.sleep(1)
-                    modelTitle = driver.find_element(By.CLASS_NAME, "mantine-1uncs0m")
-                    break
-                except:
-                    pass
-            print("Trying: " + modelTitle.text)
+                # check if the folder is exist or not
+                if not os.path.exists(ParentSave):
+                    os.makedirs(ParentSave)
+                    
             
             
-                    
             # +==============================+
             # | Skip Download if File Exists |
             # +==============================+
@@ -110,7 +110,7 @@ def DownloadModel(driver, CardData):
             # | Get Model Spec         |
             # +========================+
             baseModel = driver.find_elements(By.CSS_SELECTOR, "tr.mantine-1avyp1d")
-            print(len(baseModel))
+            # print(len(baseModel))
             for iBaseModel in baseModel:
                 # print(iBaseModel.text)
                 if "Base Model" in iBaseModel.text:
