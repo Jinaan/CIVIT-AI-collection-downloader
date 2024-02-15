@@ -35,9 +35,10 @@ def opener():
     profile = path + "\PROFILE" + "\\" + "Profile " + PROFILENAME
     argument = '--user-data-dir=' + profile
     options.add_argument(argument)
-    options.add_argument(f'user-agent={userAgent}')
-    options.add_argument('--ignore-ssl-errors')
-    options.add_argument('--ignore-certificate-errors')
+    options.add_argument(f'user-agent={userAgent}')         # set user agent
+    options.add_argument('--ignore-ssl-errors')             # ignore ssl errors
+    options.add_argument('--ignore-certificate-errors')     # ignore certificate errors
+    options.add_argument('--disable-dev-shm-usage')         # overcome limited resource problems
 
     if HEADLESS:
         options.add_argument('--no-sandbox')
