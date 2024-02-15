@@ -37,6 +37,54 @@ def DownloadModel(driver, CardData):
             
             
             # +========================+
+            # | Get Model Type         |
+            # +========================+
+            while True:
+                try:
+                    time.sleep(1)
+                    modelType = driver.find_element(By.CLASS_NAME, "mantine-1cvam8p")
+                    break
+                except:
+                    pass
+                
+                
+            # +============================+
+            # | Checking Similarities      |
+            # | with FILTER                |
+            # +============================+
+            print("Checking Model Type of " + modelType.text)
+            
+            result = fuzzywuzzy.process.extractOne(modelType.text.lower(), FILTERTYPE)
+            # Check if a matching filter was found with sufficient similarity
+            if result[1] is not None and result[1] > 80:
+                # ParentSave was MODELPATH that was contain similarity minimum 80% with modelType.text
+                ParentSave = MODELPATH[result[0].upper()]
+            else:
+                continue
+            
+            
+            # +===============================+
+            # |   Check Lora Model Category   |
+            # +===============================+
+            labelContainer = None	
+            if modelType.text.lower() == "lora":
+                try:
+                    labelContainer = driver.find_element(By.CLASS_NAME, "mantine-eqo531")
+                    print(labelContainer.text)
+                
+                    if labelContainer:
+                        ParentSave = os.path.join(ParentSave, labelContainer.text)
+                
+                    # check if the folder is exist or not
+                    if not os.path.exists(ParentSave):
+                        os.makedirs(ParentSave)
+                
+                except:
+                    pass
+                    
+                    
+                
+            # +========================+
             # | Get Model Name         |
             # +========================+
             while True:
@@ -49,21 +97,17 @@ def DownloadModel(driver, CardData):
             print("Trying: " + modelTitle.text)
             
             
-            # +========================+
-            # | Get Model Type         |
-            # +========================+
-            while True:
-                try:
-                    time.sleep(1)
-                    modelType = driver.find_element(By.CLASS_NAME, "mantine-1cvam8p")
-                    break
-                except:
-                    pass
-                
+                    
+            # +==============================+
+            # | Skip Download if File Exists |
+            # +==============================+
+            if os.path.exists(os.path.join(ParentSave, modelTitle.text + ".safetensors")):
+                continue
+            
             
             
             # +========================+
-            # | Get Model Type         |
+            # | Get Model Spec         |
             # +========================+
             baseModel = driver.find_elements(By.CSS_SELECTOR, "tr.mantine-1avyp1d")
             print(len(baseModel))
@@ -83,39 +127,12 @@ def DownloadModel(driver, CardData):
                     triggerWords = ", ".join(triggerWords)
             
             
-            # time.sleep(1000)
-            
                 
-                
-            # +============================+
-            # | Checking Similarities      |
-            # | with FILTER                |
-            # +============================+
-            print("Checking Model Type of " + modelType.text)
-            
-            result = fuzzywuzzy.process.extractOne(modelType.text.lower(), FILTERTYPE)
-            # Check if a matching filter was found with sufficient similarity
-            if result[1] is not None and result[1] > 80:
-                # ParentSave was MODELPATH that was contain similarity minimum 80% with modelType.text
-                ParentSave = MODELPATH[result[0].upper()]
-            else:
-                continue
-            
-            
-            # +==============================+
-            # | Skip Download if File Exists |
-            # +==============================+
-            if os.path.exists(os.path.join(ParentSave, modelTitle.text + ".safetensors")):
-                continue
-                
-                
-                
-            downloadLink = None
-            
             # +=======================================+
             # | First Attempt to Get Download Link    |
             # +=======================================+
             tryCount = 0
+            downloadLink = None
             while True:
                 try:
                     time.sleep(1)
@@ -172,6 +189,10 @@ def DownloadModel(driver, CardData):
             }
             saveModel(ParentSave, dataToSave)
             
+            
+                
+                
+                
             continue
         
         except Exception as e:
