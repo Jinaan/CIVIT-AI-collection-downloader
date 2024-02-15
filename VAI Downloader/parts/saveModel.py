@@ -22,7 +22,7 @@ def saveModel(PathSave, moddelData):
     
     
     
-    print("Saving Model: " + name)
+    print("Saving Model\t\t: " + name)
     modelName = name
     # +==================================+
     # | Removing Unnecessary Symbols     |
@@ -32,13 +32,6 @@ def saveModel(PathSave, moddelData):
     for i in prohibited:
         modelName = modelName.replace(i, "")
         modelName = modelName.replace(i, "")
-    # modelName = modelName.replace(">", "")
-    # modelName = modelName.replace("<", "")
-    # modelName = modelName.replace(":", "")
-    # modelName = modelName.replace("\"", "")
-    # modelName = modelName.replace("/", " ")
-    # modelName = modelName.replace("\\", " ")
-    # modelName = modelName.replace("|", " ")
     modelFormat = ".safetensors"
     
     # save the data to json file
@@ -57,9 +50,3 @@ def saveModel(PathSave, moddelData):
     with open(os.path.join(modelFolder, modelName + modelFormat), "wb") as f:
         f.write(rs.content)
         
-# data = {
-#     "URL": "https://www.google.com",
-#     "Name": "Google",
-#     "model": "SD 1",
-#     "trigger": ["SD 1", "SD 2"]
-# }
