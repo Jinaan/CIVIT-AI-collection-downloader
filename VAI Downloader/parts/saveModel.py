@@ -19,10 +19,6 @@ def saveModel(PathSave, moddelData):
         "preferred weight": 0.8,
     }
     
-    # save the data to json file
-    import json
-    with open(os.path.join(PathSave, name + ".json"), "w") as f:
-        json.dump(dataTemp, f, indent=4)
     
     
     print("Saving Model: " + name)
@@ -31,11 +27,24 @@ def saveModel(PathSave, moddelData):
     # | Removing Unnecessary Symbols     |
     # | on the Model Name                |
     # +==================================+
-    modelName = modelName.replace("/", " ")
-    modelName = modelName.replace("\\", " ")
-    modelName = modelName.replace("|", " ")
+    prohibited = ["*", "?", ":", "<", ">", "|", "\"", "/", "\\"]
+    for i in prohibited:
+        modelName = modelName.replace(i, "")
+        modelName = modelName.replace(i, "")
+    # modelName = modelName.replace(">", "")
+    # modelName = modelName.replace("<", "")
+    # modelName = modelName.replace(":", "")
+    # modelName = modelName.replace("\"", "")
+    # modelName = modelName.replace("/", " ")
+    # modelName = modelName.replace("\\", " ")
+    # modelName = modelName.replace("|", " ")
     modelFormat = ".safetensors"
     
+    # save the data to json file
+    import json
+    with open(os.path.join(PathSave, modelName + ".json"), "w") as f:
+        json.dump(dataTemp, f, indent=4)
+        
     modelFolder = PathSave
     # +===========================+
     # | Downloading the Model     |
