@@ -1,5 +1,6 @@
-import requests
 import os
+import json
+import requests
 
 # +===============================+
 # |   Function to Download and    |
@@ -41,7 +42,6 @@ def saveModel(PathSave, moddelData):
     modelFormat = ".safetensors"
     
     # save the data to json file
-    import json
     with open(os.path.join(PathSave, modelName + ".json"), "w") as f:
         json.dump(dataTemp, f, indent=4)
         
