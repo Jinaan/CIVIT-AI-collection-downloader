@@ -11,10 +11,15 @@ def saveModel(PathSave, moddelData):
     downloadUrl = moddelData["URL"]
     model = moddelData["model"]
     trigger = moddelData["trigger"]
+    lycoris = moddelData["lycoris"]
+    modelUrl = moddelData["ModelUrl"]
     
+    description = "Url : " + modelUrl + "\n"
+    if lycoris:
+        description = description + "Lycoris Model"
     
     dataTemp = {
-        "description": None,
+        "description": description,
         "sd version": model,
         "activation text": trigger,
         "preferred weight": 0.8,
@@ -32,6 +37,13 @@ def saveModel(PathSave, moddelData):
     for i in prohibited:
         modelName = modelName.replace(i, "")
         modelName = modelName.replace(i, "")
+    # modelName = modelName.replace(">", "")
+    # modelName = modelName.replace("<", "")
+    # modelName = modelName.replace(":", "")
+    # modelName = modelName.replace("\"", "")
+    # modelName = modelName.replace("/", " ")
+    # modelName = modelName.replace("\\", " ")
+    # modelName = modelName.replace("|", " ")
     modelFormat = ".safetensors"
     
     # save the data to json file
@@ -50,3 +62,9 @@ def saveModel(PathSave, moddelData):
     with open(os.path.join(modelFolder, modelName + modelFormat), "wb") as f:
         f.write(rs.content)
         
+# data = {
+#     "URL": "https://www.google.com",
+#     "Name": "Google",
+#     "model": "SD 1",
+#     "trigger": ["SD 1", "SD 2"]
+# }
